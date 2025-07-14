@@ -172,7 +172,7 @@ This project is licensed under the MIT License.
 
 ## 📬 Contact
 
-For questions or feedback, reach out to the team via GitHub Issues or contact the project maintainers at sliitsesc@example.com.
+For questions or feedback, reach out to the team via GitHub Issues or contact the project maintainers
 
 ---
 
