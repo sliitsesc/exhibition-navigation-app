@@ -9,13 +9,13 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       "Loading Exhibition...",
       "Preparing Zones...",
       "Setting up Experience...",
-      "Almost Ready..."
+      "Almost Ready...",
     ];
 
     const interval = setInterval(() => {
-      setProgress(prev => {
+      setProgress((prev) => {
         const newProgress = prev + Math.random() * 15 + 5;
-        
+
         if (newProgress >= 100) {
           clearInterval(interval);
           setTimeout(onComplete, 500);
@@ -55,7 +55,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         {/* Loading Progress */}
         <div className="w-64 space-y-3">
           <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-            <div 
+            <div
               className="h-full bg-gradient-to-r from-zone-a via-zone-b to-zone-c transition-all duration-300 ease-out rounded-full"
               style={{ width: `${progress}%` }}
             />
