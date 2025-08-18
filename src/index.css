@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 220 15% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 15% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 15% 25%;
+
+    --radius: 1rem;
+
+    /* Zone Colors - Pastel palette for exhibition zones */
+    --zone-a: 120 40% 85%;
+    --zone-a-foreground: 120 30% 35%;
+    --zone-b: 350 50% 88%;
+    --zone-b-foreground: 350 40% 40%;
+    --zone-c: 190 45% 85%;
+    --zone-c-foreground: 190 35% 35%;
+    --zone-d: 50 60% 88%;
+    --zone-d-foreground: 50 50% 40%;
+    --zone-e: 280 40% 88%;
+    --zone-e-foreground: 280 30% 40%;
+    --zone-f: 150 35% 85%;
+    --zone-f-foreground: 150 25% 35%;
+
+    /* App-specific colors */
+    --app-header: 0 0% 100%;
+    --app-header-foreground: 220 15% 25%;
+    --nav-background: 0 0% 100%;
+    --nav-border: 220 13% 91%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 25% 35%));
+    --gradient-zone-a: linear-gradient(135deg, hsl(var(--zone-a)), hsl(120 30% 75%));
+    --gradient-zone-b: linear-gradient(135deg, hsl(var(--zone-b)), hsl(350 40% 78%));
+    --gradient-zone-c: linear-gradient(135deg, hsl(var(--zone-c)), hsl(190 35% 75%));
+    --gradient-zone-d: linear-gradient(135deg, hsl(var(--zone-d)), hsl(50 50% 78%));
+    --gradient-zone-e: linear-gradient(135deg, hsl(var(--zone-e)), hsl(280 30% 78%));
+    --gradient-zone-f: linear-gradient(135deg, hsl(var(--zone-f)), hsl(150 25% 75%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(220 15% 25% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(220 15% 25% / 0.12);
+    --shadow-strong: 0 8px 32px hsl(220 15% 25% / 0.16);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 220 14% 95%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 220 14% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 14% 95%;
+
+    --primary: 220 14% 95%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 14% 95%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 220 15% 15%;
+    --accent-foreground: 220 14% 95%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 220 14% 95%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 220 14% 95%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
