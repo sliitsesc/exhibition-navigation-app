@@ -28,9 +28,8 @@ export default function RootLayout({
           content="Thurstan College Exhibition Navigation App"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
-      >
+      <body>
+        
         <MobileNavBar />
         <main>{children}</main>
       </body>

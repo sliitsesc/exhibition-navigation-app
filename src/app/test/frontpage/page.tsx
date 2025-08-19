@@ -1,11 +1,10 @@
-"use client";
 import React from 'react';
 
 export default function KnightRoBanner() {
   return (
     <div
       style={{
-        background: 'linear-gradient(to bottom, #0a1a2f, #1c2e4a)',
+        background: 'linear-gradient(to bottom, #0a1a2f, #1c2e4a) ',
         color: 'white',
         minHeight: '100vh',
         display: 'flex',
