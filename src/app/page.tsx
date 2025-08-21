@@ -5,7 +5,8 @@ export default function KnightRoBanner() {
   return (
     <div
       style={{
-        background: 'linear-gradient(to bottom, #0a1a2f, #1c2e4a)',
+        backgroundImage: 'url("/images/banner-bg.jpg")',
+        backgroundPosition: 'center',
         color: 'white',
         minHeight: '100vh',
         display: 'flex',
@@ -16,27 +17,73 @@ export default function KnightRoBanner() {
         position: 'relative',
       }}
     >
+      {/* Logo in top right corner */}
+      <img
+        src="/images/75logo.png" // Place your logo in public/images/logo.png
+        alt="Logo"
+        style={{
+          position: 'absolute',
+          top: 24,
+          right: 24,
+          width: 75,
+          height: 75,
+          objectFit: 'contain',
+          zIndex: 2,
+        }}
+      />
       {/* Knight Emblem Image */}
       <img
-        src="/images/knight-emblem.png" // Place your image in public/images/
+        src="/images/knight-emblem.svg" // Place your image in public/images/
         alt="Knight Emblem"
-        style={{ width: 100, height: 100, marginBottom: 16 }}
+        style={{ width: 180, height: 200, marginBottom: 30 }}
       />
 
       {/* Title */}
-      <h1 style={{ fontSize: 28, marginBottom: 8, textAlign: 'center' }}>
-        KNIGHT-RO EXHIBITION
-      </h1>
-
+    
+      <h3 style={{ fontSize: 24, marginBottom: 16, textAlign: 'center' }}>
+      EXHIBITION
+      </h3>
       {/* Subtitle */}
       <p style={{ fontSize: 16, color: '#ccc', textAlign: 'center', marginBottom: 32 }}>
         EXHIBITION NAVIGATION SUPPORT APPLICATION
       </p>
 
       {/* Buttons */}
-      <div style={{ display: 'flex', gap: 16 }}>
-        <button style={buttonStyle}>SCAN QR CODE</button>
-        <button style={buttonStyle}>EXPLORE ZONES</button>
+      <div style={{ display: 'flex',flexDirection: 'column', gap: 16 }}>
+        <button
+          style={{
+            backgroundColor: 'white',
+            color: 'black',
+            fontWeight: 'bold',
+            fontSize: 22,
+            padding: '20px 40px',
+            border: 'none',
+            borderRadius: '999px',
+            textAlign: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            transition: 'background-color 0.3s ease',
+          }}
+        >
+          SCAN QR CODE
+        </button>
+        <button
+          style={{
+            backgroundColor: 'white',
+            color: 'black',
+            fontWeight: 'bold',
+            fontSize: 22,
+            padding: '20px 40px',
+            border: 'none',
+            borderRadius: '999px',
+            textAlign: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            transition: 'background-color 0.3s ease',
+          }}
+        >
+          EXPLORE ZONES
+        </button>
       </div>
     </div>
   );
