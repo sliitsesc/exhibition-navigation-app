@@ -6,9 +6,9 @@ import React from "react";
 export default function StallDetailPage({
   params,
 }: {
-  params: { zoneId: string; stallId: string };
+  params: Promise<{ zoneId: string; stallId: string }>;
 }) {
-  const { zoneId, stallId } = params;
+  const { zoneId, stallId } = React.use(params);
   // BottomNav state handled globally in layout
   // derive a human-readable stall name from the route param
   const stallTitle = React.useMemo(() => {

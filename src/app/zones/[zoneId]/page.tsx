@@ -54,8 +54,8 @@ const mockStalls: Stall[] = [
   },
 ];
 
-export default function ZoneDetailPage({ params }: { params: { zoneId: string } }) {
-  const { zoneId } = params;
+export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: string }> }) {
+  const { zoneId } = React.use(params);
   const [loading, setLoading] = useState(true);
   const [stalls, setStalls] = useState<Stall[]>([]);
 
