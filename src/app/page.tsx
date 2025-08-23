@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+import { useRouter } from 'next/navigation'
 
 export default function KnightRoBanner() {
+  const router = useRouter()
   return (
     <div
       style={{
@@ -54,8 +56,9 @@ export default function KnightRoBanner() {
       </p>
 
       {/* Buttons */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        <button
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+  <button
+      onClick={() => router.push('/scan')}
           style={{
             backgroundColor: "white",
             color: "black",
@@ -72,6 +75,7 @@ export default function KnightRoBanner() {
           SCAN QR CODE
         </button>
         <button
+          onClick={() => router.push('/zones')}
           style={{
             backgroundColor: "white",
             color: "black",
