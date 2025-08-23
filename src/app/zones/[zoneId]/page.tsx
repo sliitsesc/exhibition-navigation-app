@@ -122,5 +122,5 @@ export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: s
       </div>
 
     </div>
-  );
+  )
 }

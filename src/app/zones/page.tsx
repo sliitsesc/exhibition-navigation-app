@@ -1,4 +1,8 @@
+"use client"
+
 import React from "react";
+import BottomNav from '@/components/BottomNav/BottomNav'
+import Header from '@/components/Header/Header'
 
 type Zone = {
   id: string;
@@ -66,8 +70,11 @@ const zones: Zone[] = [
 ];
 
 export default function ZonesPage() {
+  const [navIndex, setNavIndex] = React.useState<number>(1)
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
+  <Header title="ALL ZONES" />
       {/* Zones Grid */}
       <main className="flex-1 overflow-y-auto px-3 pb-20 mt-4">
         {/* 👆 mt-4 adds the gap between header and grid */}
@@ -95,8 +102,11 @@ export default function ZonesPage() {
           ))}
         </div>
       </main>
+
+      {/* Bottom navigation (fixed) */}
+      <BottomNav activeIndex={navIndex} onChange={(i) => setNavIndex(i)} />
     </div>
-  );
+  )
 }
 
 type NavItemProps = {
