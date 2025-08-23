@@ -14,8 +14,8 @@ export default function RootLayout({
           content="Thurstan College Exhibition Navigation App"
         />
       </head>
-      <body>
-        <main>{children}</main>
+      <body suppressHydrationWarning>
+        <main id="__next_root">{children}</main>
       </body>
     </html>
   );

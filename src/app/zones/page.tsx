@@ -1,4 +1,7 @@
+"use client"
+
 import React from "react";
+import BottomNav from '@/components/BottomNav/BottomNav'
 
 type Zone = {
   id: string;
@@ -66,6 +69,8 @@ const zones: Zone[] = [
 ];
 
 export default function ZonesPage() {
+  const [navIndex, setNavIndex] = React.useState<number>(1)
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Zones Grid */}
@@ -95,8 +100,11 @@ export default function ZonesPage() {
           ))}
         </div>
       </main>
+
+      {/* Bottom navigation (fixed) */}
+      <BottomNav activeIndex={navIndex} onChange={(i) => setNavIndex(i)} />
     </div>
-  );
+  )
 }
 
 type NavItemProps = {
