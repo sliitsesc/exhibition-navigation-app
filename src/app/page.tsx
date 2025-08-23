@@ -58,7 +58,7 @@ export default function KnightRoBanner() {
       {/* Buttons */}
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
   <button
-      onClick={() => router.push('/scan')}
+      onClick={() => router.push('/ss')}
           style={{
             backgroundColor: "white",
             color: "black",

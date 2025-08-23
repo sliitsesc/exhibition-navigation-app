@@ -58,11 +58,17 @@ export default function BottomNav({ items = defaultItems, activeIndex = 0, onCha
                 type="button"
                 aria-label={it.ariaLabel ?? it.label}
                 aria-pressed={active}
-                className={`${styles.button} ${active ? styles.active : ''}`}
+                // mark help as disabled for now
+                disabled={it.key === 'help'}
+                aria-disabled={it.key === 'help'}
+                className={`${styles.button} ${active ? styles.active : ''} ${it.key === 'help' ? 'opacity-50 cursor-default' : ''}`}
                 onClick={() => {
+                  if (it.key === 'help') return // unclickable / inert
                   if (onChange) onChange(i)
                   if (it.key === 'explore') {
                     router.push('/zones')
+                  } else if (it.key === 'scan') {
+                    router.push('/ss') // currently points to home; future implementation can update path
                   }
                 }}
               >
