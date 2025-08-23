@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import styles from './BottomNav.module.css'
 
 type NavItem = {
@@ -45,6 +46,7 @@ const defaultItems: NavItem[] = [
 ]
 
 export default function BottomNav({ items = defaultItems, activeIndex = 0, onChange }: BottomNavProps) {
+  const router = useRouter()
   return (
     <nav className={styles.wrapper} role="navigation" aria-label="Bottom Navigation">
       <ul className={styles.list}>
@@ -57,7 +59,12 @@ export default function BottomNav({ items = defaultItems, activeIndex = 0, onCha
                 aria-label={it.ariaLabel ?? it.label}
                 aria-pressed={active}
                 className={`${styles.button} ${active ? styles.active : ''}`}
-                onClick={() => onChange && onChange(i)}
+                onClick={() => {
+                  if (onChange) onChange(i)
+                  if (it.key === 'explore') {
+                    router.push('/zones')
+                  }
+                }}
               >
                 <span className={styles.icon} aria-hidden>
                   {it.icon}
