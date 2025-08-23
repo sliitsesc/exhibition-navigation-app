@@ -69,8 +69,7 @@ export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: s
   }, [zoneId]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col pb-24">
-     
+    <div className="flex flex-col pb-24">
 
       {/* Stall Cards */}
       <div className="flex flex-col gap-4 px-4">
@@ -121,6 +120,6 @@ export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: s
         ))}
       </div>
 
-    </div>
+  </div>
   )
 }
