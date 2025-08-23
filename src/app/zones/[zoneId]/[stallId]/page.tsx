@@ -26,14 +26,14 @@ export default function StallDetailPage({
   }, [stallId])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <Header title={stallTitle} showBack />
-      <div className="px-4 pt-4 w-full max-w-3xl">
+      <div className="min-h-screen flex flex-col bg-white">
+       <Header title={`STALL ${stallId}`} showBack />
+       <div className="px-4 pt-6 w-full max-w-3xl mx-auto">
         <h1 className="text-2xl font-bold mb-2">{stallTitle}</h1>
         <p>Details for stall in zone {zoneId} will be shown here.</p>
-      </div>
+       </div>
 
-      <BottomNav activeIndex={navIndex} onChange={(i) => setNavIndex(i)} />
+  <BottomNav activeIndex={navIndex} onChange={(i) => setNavIndex(i)} />
     </div>
   );
 }
