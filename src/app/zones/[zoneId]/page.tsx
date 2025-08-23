@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 type Stall = {
   id: string;
@@ -75,10 +76,15 @@ export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: s
       {/* Stall Cards */}
       <div className="flex flex-col gap-4 px-4">
         {(loading ? mockStalls : stalls).map((stall, idx) => (
-          <div
-            key={stall.id + idx}
-            className="flex bg-gradient-to-r from-[#E0E7FF] via-[#E0E7FF] to-[#F6F8FF] rounded-2xl p-3 shadow-sm gap-4 items-center"
-          >
+         
+            <Link
+    key={stall.id + idx}
+    href={`/zones/${zoneId}/${stall.id}`}
+    className="no-underline"
+  >
+    <div
+      className="flex bg-gradient-to-r from-[#E0E7FF] via-[#E0E7FF] to-[#F6F8FF] rounded-2xl p-3 shadow-sm gap-4 items-center hover:shadow-md transition"
+    >
             {/* Image */}
             <div className="w-20 h-20 rounded-xl overflow-hidden bg-white flex-shrink-0">
               {loading ? (
@@ -118,6 +124,7 @@ export default function ZoneDetailPage({ params }: { params: Promise<{ zoneId: s
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
 
