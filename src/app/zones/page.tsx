@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { Montserrat } from "next/font/google";
+
+// ✅ Load Montserrat
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 type Zone = {
   id: string;
@@ -8,6 +15,7 @@ type Zone = {
   description: string;
   imageUrl: string;
 };
+
 const zones: Zone[] = [
   {
     id: "A",
@@ -71,18 +79,16 @@ export default function ZonesPage() {
   const router = useRouter();
 
   return (
-    <div
-      className="min-h-screen flex flex-col bg-white"
-      style={{ fontFamily: "Montserrat, sans-serif" }}>
+    <div className={`min-h-screen flex flex-col bg-white ${montserrat.className}`}>
       {/* Zones Grid */}
       <main className="flex-1 overflow-y-auto px-3 pb-20 mt-4">
-        {/* 👆 mt-4 adds the gap between header and grid */}
         <div className="grid grid-cols-2 gap-4">
           {zones.map((zone) => (
             <div
               key={zone.id}
-              className="flex flex-col items-center overflow-hidden cursor-pointer rounded-[18px] border border-[#F9F9F9] bg-gradient-to-br from-[#DDE7F7] to-[#F2F3FF] shadow-[0_4px_12.5px_0px_rgba(0,0,0,0.04)] w-auto h-[210px] transition-transform hover:scale-105"
-              onClick={() => router.push(`/zones/${zone.id}`)}>
+              className="flex flex-col items-center overflow-hidden cursor-pointer rounded-[18px] border border-[#F9F9F9] bg-gradient-to-br from-[#DDE7F7] to-[#F2F3FF] shadow-[0_4px_12.5px_0px_rgba(0,0,0,0.04)] w-full h-[210px] transition-transform hover:scale-105"
+              onClick={() => router.push(`/zones/${zone.id}`)}
+            >
               <div className="p-2 w-full">
                 <img
                   src={zone.imageUrl}
@@ -91,10 +97,10 @@ export default function ZonesPage() {
                 />
               </div>
               <div className="px-2 pb-3 w-full">
-                <h3 className="text-gray-800 font-bold text-[18px] leading-[100%] tracking-[-0.5px] font-[Montserrat] m-0">
+                <h3 className="text-gray-800 font-bold text-[18px] leading-[100%] tracking-[-0.5px] m-0">
                   {zone.title}
                 </h3>
-                <p className="text-gray-500 text-[12px] leading-[100%] tracking-[-0.5px] font-[Montserrat] m-0 line-clamp-2">
+                <p className="text-gray-500 text-[12px] leading-[100%] tracking-[-0.5px] m-0 line-clamp-2">
                   {zone.description}
                 </p>
               </div>
@@ -113,7 +119,5 @@ type NavItemProps = {
 };
 
 function ZoneCard({ icon, label, selected }: NavItemProps) {
-  return (
-    <ZoneCard icon="zone-icon" label="Zone Label" />
-  );
+  return <ZoneCard icon="zone-icon" label="Zone Label" />;
 }
