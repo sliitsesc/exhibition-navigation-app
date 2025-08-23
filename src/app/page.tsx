@@ -1,33 +1,32 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 export default function KnightRoBanner() {
   return (
     <div
       style={{
         backgroundImage: 'url("/images/banner-bg.jpg")',
-        backgroundPosition: 'center',
-        color: 'white',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundPosition: "center",
+        color: "white",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         padding: 24,
-        position: 'relative',
-      }}
-    >
+        position: "relative",
+      }}>
       {/* Logo in top right corner */}
       <img
         src="/images/75logo.png" // Place your logo in public/images/logo.png
         alt="Logo"
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 24,
           right: 24,
           width: 75,
           height: 75,
-          objectFit: 'contain',
+          objectFit: "contain",
           zIndex: 2,
         }}
       />
@@ -39,49 +38,53 @@ export default function KnightRoBanner() {
       />
 
       {/* Title */}
-    
-      <h3 style={{ fontSize: 24, marginBottom: 16, textAlign: 'center' }}>
-      EXHIBITION
+
+      <h3 style={{ fontSize: 24, marginBottom: 16, textAlign: "center" }}>
+        EXHIBITION
       </h3>
       {/* Subtitle */}
-      <p style={{ fontSize: 16, color: '#ccc', textAlign: 'center', marginBottom: 32 }}>
+      <p
+        style={{
+          fontSize: 16,
+          color: "#ccc",
+          textAlign: "center",
+          marginBottom: 32,
+        }}>
         EXHIBITION NAVIGATION SUPPORT APPLICATION
       </p>
 
       {/* Buttons */}
-      <div style={{ display: 'flex',flexDirection: 'column', gap: 16 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         <button
           style={{
-            backgroundColor: 'white',
-            color: 'black',
-            fontWeight: 'bold',
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "bold",
             fontSize: 22,
-            padding: '20px 40px',
-            border: 'none',
-            borderRadius: '999px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            transition: 'background-color 0.3s ease',
-          }}
-        >
+            padding: "20px 40px",
+            border: "none",
+            borderRadius: "999px",
+            textAlign: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+            transition: "background-color 0.3s ease",
+          }}>
           SCAN QR CODE
         </button>
         <button
           style={{
-            backgroundColor: 'white',
-            color: 'black',
-            fontWeight: 'bold',
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "bold",
             fontSize: 22,
-            padding: '20px 40px',
-            border: 'none',
-            borderRadius: '999px',
-            textAlign: 'center',
-            cursor: 'pointer',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            transition: 'background-color 0.3s ease',
-          }}
-        >
+            padding: "20px 40px",
+            border: "none",
+            borderRadius: "999px",
+            textAlign: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+            transition: "background-color 0.3s ease",
+          }}>
           EXPLORE ZONES
         </button>
       </div>
@@ -90,12 +93,12 @@ export default function KnightRoBanner() {
 }
 
 const buttonStyle: React.CSSProperties = {
-  backgroundColor: 'white',
-  color: '#0a1a2f',
-  border: 'none',
-  padding: '12px 20px',
+  backgroundColor: "white",
+  color: "#0a1a2f",
+  border: "none",
+  padding: "12px 20px",
   borderRadius: 8,
-  fontWeight: 'bold',
-  cursor: 'pointer',
-  boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+  fontWeight: "bold",
+  cursor: "pointer",
+  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
 };
